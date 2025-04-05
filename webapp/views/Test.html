@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<head>
+
+    <title>The Dusk | Homepage</title>
+    <style>
+        @font-face {
+            font-family: Modern;
+            src: url('/webapp/assets/fonts/ModernSans-Light.otf');
+        }
+
+        @font-face {
+            font-family: Cherry;
+            src: url('/webapp/assets/fonts/ModernSans-Light.otf');
+        }
+
+        @font-face {
+            font-family: Dune;
+            src: url('/webapp/assets/fonts/Dune_Rise.otf');
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        header {
+            font-family: Dune;
+            text-align: center;
+            padding: 5px;
+            font-size: 38px;
+            font-weight: normal;
+            color: white;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            padding: 10px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+            border: 10px;
+            border-color: white;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-family: Cherry;
+            font-size: 22px;
+            padding: 8px;
+            font-weight: lighter;
+            position: relative;
+        }
+
+        .link a:after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width .3s;
+            position: absolute;
+            bottom: -7px;
+            left: 0;
+            right: 0;
+        }
+
+        .link a:hover:after {
+            width: 100%;
+            transition: width .3s;
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        h2 {
+            font-family: Modern;
+            text-align: center;
+            font-size: 60px;
+            font-weight: normal;
+            color: black;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        .content-container {
+            text-align: center;
+            padding: 510px 0;
+        }
+
+        .product-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 45px 0;
+            margin-bottom: -700px;
+            font-family: Cherry;
+        }
+
+        .product {
+            width: 200px;
+            border: 0;
+            padding: 10px;
+            text-align: center;
+            background-color: #f5f5f5;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-family: Cherry;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .custom-button {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 30px;
+        }
+
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            margin: 0 auto;
+            max-width: 1600px;
+            max-height: 900px;
+        }
+
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            display: block;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .prev {
+            left: 2%;
+        }
+
+        .next {
+            right: 2%;
+        }
+
+.vertical-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto;
+  max-width: 1200px;
+  background-color: white;
+}
+.vertical-image {
+  width: 40%;
+  margin-right: 5%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.437);
+}
+.text-container {
+  width: 55%;
+}
+.text-container h2 {
+  font-family: Modern;
+  text-align: left;
+  font-size: 60px;
+  font-weight: normal;
+  color: rgb(0, 0, 0);
+  letter-spacing: 2px;
+  margin: 0;
+}
+.text-container p {
+  font-family: Cherry;
+  text-align: left;
+  font-size: 22px;
+  font-weight: lighter;
+  color: rgb(0, 0, 0);
+  margin: 20px 0;
+}
+
+
+.section-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto;
+  position: relative;
+}
+
+.section-video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.section-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: 1600px;
+}
+
+.section-content {
+  width: 50%;
+  padding: 20px;
+  background-color: rgba(197, 197, 197, 0.156);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.153);
+  font-family: Cherry; 
+  position: relative;
+}
+
+.section-content h2 {
+  font-family: Modern;
+  text-align: left;
+  font-size: 60px;
+  font-weight: normal;
+  color: black;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.section-content h3 {
+  font-family: Modern;
+  text-align: left;
+  font-size: 40px;
+  font-weight: normal;
+  color: rgb(0, 0, 0);
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.section-content p {
+  font-family: Cherry;
+  text-align: left;
+  font-size: 22px;
+  font-weight: lighter;
+  color: black;
+  margin: 20px 0;
+}
+
+.section-image {
+  width: 30%;
+  border-radius: 20px;
+  padding: 30px;
+  margin-left: 80px;
+}
+
+.why-choose-us-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 45px 0;
+    margin-bottom:px;
+    font-family: Cherry;
+}
+
+.why-choose-us-item {
+
+  width: 25%;
+  border: 0;
+  padding: 50px;
+  text-align: center;
+  background-color: #f5f5f5;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.186);
+  font-family: Cherry;
+  position: relative;
+  
+}
+
+.why-choose-us-icon {
+  width: 1px;
+  height: 1px;
+  object-fit: cover;
+  border-radius :  8px; 
+  margin-top: 0px;
+}
+
+.why-choose-us-content {
+  padding: 5px;
+}
+
+.why-choose-us-content h3 {
+  font-family: Modern;
+  text-align: center;
+  font-size: 35px;
+  font-weight: normal;
+  color: black;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.why-choose-us-content p {
+  font-family: Cherry;
+  text-align: center;
+  font-size: 22px;
+  font-weight: lighter;
+  color: black;
+  margin: 20px 0;
+}
+
+h4 {
+    text-align: center;
+    font-family: modern;
+    letter-spacing: 20px;
+    color:blueviolet;
+    padding-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  margin-left: 22px;
+}
+
+.image {
+  width: 97%;
+  height: 100%;
+  padding-bottom: 0px;
+  border-radius: 5px;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.341);
+}
+.footer {
+            background-color: #000;
+            color: #fff;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-family: Cherry;
+            margin-top: 100px;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+            margin: 10px;
+        }
+        .footer-column h3 {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        .footer-column ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer-column ul li a:hover {
+            text-decoration: underline;
+        }
+        .newsletter {
+            display: flex;
+            flex-direction: column;
+            font-family: Cherry;
+        }
+        .newsletter input[type="email"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+            max-width: 300px;
+        }
+        .newsletter button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #444;
+            color: #fff;
+            cursor: pointer;
+        }
+html{
+    scroll-behavior: smooth;
+}
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>DUSK</h1>
+    <nav>
+        <ul>
+            <li class="link"><a href="#section 1">Sneak-Peek</a></li>
+            <li class="link"><a href="index.html">Spring 24' Collection</a></li>
+            <li class="link"><a href="#section 2">About Us</a></li>
+            <li class="link"><a href="form.html">Contact Us</a></li>
+            <li class="link"><a href="form.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="/webapp/assets/videos/THE DUSK EXCLUSIVES.mp4" type="video/mp4">
+        </video>
+    </div>
+</header>
+
+<div class="content-container">
+    <section id = "section 1"><h2>NEW DROPS</h2></section>
+
+    <div class="product-list">
+        <div class="product">
+            <img src="/webapp/assets/images/aj5.jpg" alt="Product 1">
+            <h3>JORDAN</h3>
+            <p>AIR JORDAN 5 RETRO 'WHITE/LUCKY GREEN-BLACK-ICE BLUE'</p>
+            <p><b>₹18,395.00</b></p>
+            <details>
+                <summary>SELECT SIZE</summary>
+                <li>UK 7</li>
+                <li>UK 10</li>
+            </details>
+        </div>
+        <div class="product">
+            <img src="/webapp/assets/images/aj1 mid.jpg" alt="Product 2">
+            <h3>JORDAN</h3>
+            <p>AIR JORDAN 1 MID 'SAIL/DIFFUSED BLUE-BLUE GREY-WHITE'</p>
+            <p><b>₹11,495.00</b></p>
+        </div>
+        <div class="product">
+            <img src="/webapp/assets/images/aj9.jpg" alt="Product 3">
+            <h3>JORDAN</h3>
+            <p>AIR JORDAN 9 RETRO 'SUMMIT WHITE/BLACK-DARK POWDER BLUE'</p>
+            <p><b>₹19,295.00</b></p>
+        </div>
+        <div class="product">
+            <img src="/webapp/assets/images/air max.jpg" alt="Product 4">
+            <h3>NIKE</h3>
+            <p>AIR MAX DN 'SAIL/BLACK-COCONUT MILK-BEACH'</p>
+            <p><b>₹13,995.00</b></p>
+        </div>
+        <div class="product">
+            <img src="/webapp/assets/images/chunky nike.jpg" alt="Product 5">
+            <h3>NIKE</h3>
+            <p>ISPA SENSE FLYKNIT 'BLACK/SEAFOAM-SMOKE GREY'</p>
+            <p><b>₹7,358.00</b></p>
+        </div>
+        <div class="product">
+            <img src="/webapp/assets/images/nbs.jpg" alt="Product 6">
+            <h3>NEW BALANCE</h3>
+            <p>5740 'MULTICOLOR'</p>
+            <p><b>₹9,500.00</b></p>
+        </div>
+    </div>
+</div>
+
+
+<div class="carousel-container">
+    <div class="carousel-slides">
+        <div class="carousel-slide">
+            <img src="/webapp/assets/images/af1 (1).jpg" alt="Product 1">
+        </div>
+        <div class="carousel-slide">
+            <img src="/webapp/assets/images/blazer.jpg" alt="Product 2">
+        </div>
+        <div class="carousel-slide">
+            <img src="/webapp/assets/images/thugger.png" alt="Product 3">
+        </div>
+        <div class="carousel-slide">
+            <img src="/webapp/assets/images/We.png" alt="Product 4">
+        </div>
+        <div class="carousel-slide">
+            <img src="/webapp/assets/images/Spider.jpg" alt="Product 3">
+        </div>
+        <div class="carousel-slide">
+            <img src="/webapp/assets/images/Travis.jpg" alt="Product 3">
+        </div>
+    </div>
+    <button class="carousel-button prev">&laquo;</button>
+    <button class="carousel-button next">&raquo;</button>
+</div>
+
+
+<div class="vertical-container">
+    <img src="/webapp/assets/images/Virgil.jpg" alt="Vertical Image" class="vertical-image">
+    <div class="text-container">
+        <section id="section 2"><h2>The Face of DUSK.</h2></section>
+        <p>Virgil Abloh was an American fashion designer and entrepreneur. He began his own line of luxury streetwear clothing, Pyrex Vision, in 2012, and became the chief executive officer of the Milan-based label Off-White, a fashion house he
+             founded in 2013.
+            Further in his life he opened his own fahsion house "DUSK".</p>
+    </div>
+</div>
+
+<div class="section-container">
+    <div class="section-video-container">
+      <video autoplay loop muted class="section-video">
+        <source src="/webapp/assets/videos/leak.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="section-content">
+      <h2>Whats On The Star?</h2>
+      <h3>Presenting Rihana and ASAP Rocky</h3>
+      <p>Here ASAP is seen wearing the famous "Louis Vitton Orange".
+        Also Rihanna rocking the prada piece.
+      </p>
+    </div>
+    <img src="/webapp/assets/images/Riri.jpg" alt="Image" class="section-image">
+</div>
+<h2>Why DUSK is the best place to buy sneakers. </h2>
+<div class="why-choose-us-container">
+    <div class="why-choose-us-item">
+      <div class="why-choose-us-icon">
+        <img src="/webapp/assets/icons/return.png" alt="Icon 2">
+      </div>
+      <div class="why-choose-us-content">
+        <h3>Returns Exchange</h3>
+        <p>You can return product within 14 business days from its arrival. We can't garauntee returns if labels are removed.</p>
+      </div>
+    </div>
+    <div class="why-choose-us-item">
+      <div class="why-choose-us-icon">
+        <img src="/webapp/assets/icons/card.pngx" alt="Icon 2">
+      </div>
+      <div class="why-choose-us-content">
+        <h3>Easy Payments</h3>
+        <p>You can browse through our online or payment options, we also support EMI payments.</p>
+      </div>
+    </div>
+    <div class="why-choose-us-item">
+      <div class="why-choose-us-icon">
+        <img src="/webapp/assets/icons/truck.png" alt="Icon 3">
+      </div>
+      <div class="why-choose-us-content">
+        <h3>Express Delivery</h3>
+        <p>Choose two-hour delivery from an DUSK store, free delivery, or easy pick up option.</p>
+      </div>
+    </div>
+    <div class="why-choose-us-item">
+      <div class="why-choose-us-icon">
+        <img src="/webapp/assets/icons/vc.png" alt="Icon 4">
+      </div>
+      <div class="why-choose-us-content">
+        <h3>Ask our Specialist</h3>
+        <p>Let us guide live over video and answer all of your questions.</p>
+      </div>
+    </div>
+  </div>
+
+<h2> We Are Here.</h2>
+<h4>THE DUSK EXPERIENCE</h4>
+
+<div class="grid">
+    <img src="/webapp/assets/images/Bombay.jpg" alt="Image 1" class="image">
+    <img src="/webapp/assets/images/Delhi.jpg" alt="Image 2" class="image">
+  </div>
+
+  <footer class="footer">
+    <div class="footer-column">
+        <h3>KNOW MORE</h3>
+        <ul>
+            <li><a href="#">ABOUT DUSK</a></li>
+            <li><a href="#">STORE LOCATOR</a></li>
+            <li><a href="#">LOYALTY PROGRAM</a></li>
+            <li><a href="#">TRACK MY ORDER</a></li>
+            <li><a href="#">CONTACT US</a></li>
+            <li><a href="#">FAQS</a></li>
+            <li><a href="#">SIZE CHART</a></li>
+            <li><a href="#">REFER AND EARN</a></li>
+            <li><a href="#">CAREERS</a></li>
+            <li><a href="#">BLOGS</a></li>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <h3>FOR ORDER INQUIRIES</h3>
+        <ul>
+            <li>Email: <a href="mailto:care@duskcares.com">care@duskcares.com</a></li>
+            <li>Timings: 12PM - 8PM</li>
+            <li>Days: Mon-Sat</li>
+            <li>Contact: +91 99070 77077</li>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <h3>Sign up to our newsletter</h3>
+        <form class="newsletter">
+            <input type="email" placeholder="E-mail">
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+    <div class="footer-column">
+        <h3>POLICIES</h3>
+        <ul>
+            <li><a href="#">PRIVACY</a></li>
+            <li><a href="#">SHIPPING</a></li>
+            <li><a href="#">TERMS & CONDITIONS</a></li>
+            <li><a href="#">RETURN POLICY</a></li>
+            <li><a href="#">RETURN/EXCHANGE YOUR ORDER</a></li>
+        </ul>
+    </div>
+</footer>
+<script>
+    const carouselSlides = document.querySelector('.carousel-slides');
+    const carouselButtons = document.querySelectorAll('.carousel-button');
+    let currentSlide = 0;
+    let isSliding = false;
+
+    function updateCarousel() {
+        carouselSlides.style.transform = `translateX(${-currentSlide * 100}%)`;
+    }
+
+    carouselButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            if (isSliding) return;
+            isSliding = true;
+
+            if (button.classList.contains('next')) {
+                currentSlide = (currentSlide + 1) % carouselSlides.children.length;
+            } else {
+                currentSlide = (currentSlide - 1 + carouselSlides.children.length) % carouselSlides.children.length;
+            }
+
+            updateCarousel();
+            isSliding = false;
+        });
+    });
+
+    setInterval(() => {
+        if (isSliding) return;
+        isSliding = true;
+
+        currentSlide = (currentSlide + 1) % carouselSlides.children.length;
+        updateCarousel();
+
+        isSliding = false;
+    }, 5000);
+</script>
+
+</body>
+</html>
